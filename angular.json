@@ -3,5 +3,37 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-modules": {
+      "projectType": "library",
+      "root": "projects/ngx-modules",
+      "sourceRoot": "projects/ngx-modules/src",
+      "prefix": "devinity-tech",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-modules/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-modules/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-modules/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-modules/src/test.ts",
+            "tsConfig": "projects/ngx-modules/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-modules/karma.conf.js"
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-modules"
 }

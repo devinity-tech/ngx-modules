@@ -11,6 +11,16 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "paths": {
+      "@devinity-tech/ngx-modules/*": [
+        "projects/ngx-modules/*",
+        "projects/ngx-modules"
+      ],
+      "@devinity-tech/ngx-modules": [
+        "dist/ngx-modules/*",
+        "dist/ngx-modules"
+      ]
+    },
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
